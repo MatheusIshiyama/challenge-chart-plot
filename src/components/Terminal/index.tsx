@@ -1,10 +1,17 @@
 import React, { MouseEvent as ReactMouseEvent, useEffect, useState } from "react";
+import { Scrollbars } from "react-custom-scrollbars";
+
 import styles from "./styles.module.scss";
+
+import { useChart } from "../../contexts/ChartContext";
+import TerminalLine from "./TerminalLine";
 
 export default function Terminal() {
     const [height, setHeight] = useState(200);
     const [previousY, setPreviousY] = useState(300);
     const [resizing, setResizing] = useState(false);
+
+    const { charts } = useChart();
 
     useEffect(() => {
         window.addEventListener("mousemove", mouseMove);
@@ -37,7 +44,14 @@ export default function Terminal() {
 
     return (
         <div style={{ height }} className={styles.container}>
-            <div className={styles.content}></div>
+            <div className={styles.content}>
+                <Scrollbars style={{ width: "100%" }}>
+                    {charts &&
+                        charts.map((chart, index) => (
+                            <TerminalLine index={index + 1} chart={chart} key={index} />
+                        ))}
+                </Scrollbars>
+            </div>
             <div
                 style={{ top: height + 72.5 }}
                 onMouseDown={(event) => onMouseDown(event)}

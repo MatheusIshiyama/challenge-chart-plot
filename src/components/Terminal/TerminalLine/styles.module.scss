@@ -1,0 +1,23 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    font-size: 14px;
+    font-family: "Source Code Pro", monospace;
+}
+
+.lineIndex {
+    background-color: gray;
+    width: 50px;
+    padding-top: 10px;
+    text-align: end;
+    color: black;
+    font-size: 16px;
+}
+
+.chartData {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    padding-left: 10px;
+}
