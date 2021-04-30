@@ -6,8 +6,7 @@
         "dev": "next dev",
         "build": "next build",
         "start": "next start",
-        "test": "jest --watch",
-        "coverage": "jest --coverage"
+        "test": "jest --watch"
     },
     "repository": "https://github.com/MatheusIshiyama/challenge-chart-plot.git",
     "author": "Matheus Ishiyama <matheus.ishiyama@outlook.com>",
