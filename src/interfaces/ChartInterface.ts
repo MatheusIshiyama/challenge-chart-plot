@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 
 export interface IChart {
-    type: "start" | "span" | "data" | "stop";
-    timestamp: number;
+    type?: "start" | "span" | "data" | "stop";
+    timestamp?: number;
     select?: string[];
     group?: string[];
     begin?: number;
@@ -15,7 +15,11 @@ export interface IChart {
 
 export interface ChartContextData {
     charts: IChart[];
-    start: ({ group }: IChart) => void;
+    start: () => void;
+    span: () => void;
+    data: () => void;
+    stop: () => void;
+    clear: () => void;
 }
 
 export interface ChartContextProviderProps {
