@@ -1,6 +1,7 @@
 import type { Config } from "@jest/types";
 
-export const config: Config.InitialOptions = {
+const config: Config.InitialOptions = {
+    setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
     testPathIgnorePatterns: ["<rootDir>/.next/", "<rootDir>/node_modules/"],
     bail: 1,
     clearMocks: true,
@@ -8,4 +9,9 @@ export const config: Config.InitialOptions = {
     collectCoverageFrom: ["components/**/*.js", "pages/**/*.js"],
     coverageReporters: ["lcov", "text"],
     verbose: true,
+    moduleNameMapper: {
+        "\\.(scss|sass|css)": "identity-obj-proxy",
+    },
 };
+
+export default config;
