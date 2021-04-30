@@ -1,6 +1,6 @@
 import { IChart } from "./ChartInterface";
 
-export interface ITerminalLine {
+export interface IConsoleLog {
     index: number;
     chart: IChart;
 }

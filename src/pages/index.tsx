@@ -1,12 +1,12 @@
 import React from "react";
 
-import { Header, Terminal } from "../components";
+import { Header, Console } from "../components";
 
 export default function Index() {
     return (
         <div>
             <Header />
-            <Terminal />
+            <Console />
         </div>
     );
 }

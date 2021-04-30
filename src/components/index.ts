@@ -1,4 +1,4 @@
 import Header from "./Header";
-import Terminal from "./Terminal";
+import Console from "./Console";
 
-export { Header, Terminal };
+export { Header, Console };
