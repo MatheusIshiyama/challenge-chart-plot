@@ -32,9 +32,6 @@ yarn add jest @jest/types @types/jest ts-jest ts-node @testing-library/jest-dom 
 **Babel dependencies:**
 
 -   @babel/core
--   @babel/preset-env
--   @babel/preset-react
--   @babel/preset-typescript
 -   @babel/plugin-proposal-class-properties
 -   babel-jest
 
@@ -96,7 +93,7 @@ import "@testing-library/jest-dom";
 // .babelrc
 {
     // set presets
-    "presets": ["@babel/preset-env", "@babel/preset-react", "@babel/preset-typescript"],
+    "presets": ["next/babel"],
 
     // set plugins
     "plugins": ["@babel/plugin-proposal-class-properties"]

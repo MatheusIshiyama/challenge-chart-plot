@@ -9,10 +9,10 @@ export default function ChartTypeStart({ type, timestamp, select, group }: IChar
         <>
             <p className={[styles.chartDataField, styles.space].join(" ")}>{"{"}type:</p>
             <p className={styles.chartDataString}>'{type}'</p>
-            
+
             <p className={[styles.chartDataField, styles.space].join(" ")}>, timestamp:</p>
             <p className={styles.chartDataNumber}>{timestamp}</p>
-            
+
             <p className={styles.chartDataField}>, select: [</p>
             {select.map((item, index) => {
                 if (index === 0) {
@@ -24,7 +24,7 @@ export default function ChartTypeStart({ type, timestamp, select, group }: IChar
                 } else {
                     return (
                         <>
-                            <p className={[styles.chartDataField, styles.space].join(' ')}>,</p>
+                            <p className={[styles.chartDataField, styles.space].join(" ")}>,</p>
                             <p key={index} className={styles.chartDataString}>
                                 '{item}'
                             </p>

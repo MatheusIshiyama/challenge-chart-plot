@@ -1,12 +1,16 @@
 import React from "react";
 
-import { Header, Console } from "../components";
+import styles from '../styles/styles.module.scss';
+
+import { Header, Console, Graphic, Footer } from "../components";
 
 export default function Index() {
     return (
-        <div>
+        <div className={styles.container}>
             <Header />
             <Console />
+            <Graphic />
+            <Footer />
         </div>
     );
 }
