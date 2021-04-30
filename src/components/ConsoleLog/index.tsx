@@ -2,10 +2,10 @@ import React from "react";
 
 import styles from "./styles.module.scss";
 
-import { ITerminalLine } from "../../../interfaces";
-import ChartTypeStart from "../../ChartTypeStart";
+import { IConsoleLog } from "../../interfaces";
+import ChartTypeStart from "../ChartTypeStart";
 
-export default function TerminalLine({ index, chart }: ITerminalLine) {
+export default function ConsoleLog({ index, chart }: IConsoleLog) {
     const {
         type,
         timestamp,
@@ -33,7 +33,6 @@ export default function TerminalLine({ index, chart }: ITerminalLine) {
                         group={group}
                     />
                 )}
-                {/* {type === 'span' && <ChartTypeStart /> */}
             </div>
         </div>
     );

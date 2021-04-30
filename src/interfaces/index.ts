@@ -1,2 +1,2 @@
 export type { IChart, ChartContextData, ChartContextProviderProps } from "./ChartInterface";
-export type { ITerminalLine } from "./TerminalLineInterface";
+export type { IConsoleLog } from "./ConsoleLogInterface";

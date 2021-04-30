@@ -3,10 +3,10 @@ import { Scrollbars } from "react-custom-scrollbars";
 
 import styles from "./styles.module.scss";
 
-import { useChart } from "../../contexts/ChartContext";
-import TerminalLine from "./TerminalLine";
+import { useChart } from "../../contexts";
+import ConsoleLog from "../ConsoleLog";
 
-export default function Terminal() {
+export default function Console() {
     const [height, setHeight] = useState(200);
     const [previousY, setPreviousY] = useState(300);
     const [resizing, setResizing] = useState(false);
@@ -14,16 +14,16 @@ export default function Terminal() {
     const { charts } = useChart();
 
     useEffect(() => {
-        window.addEventListener("mousemove", mouseMove);
-        window.addEventListener("mouseup", mouseUp);
+        window.addEventListener("mousemove", handleMouseMove);
+        window.addEventListener("mouseup", handleMouseUp);
     }, [resizing]);
 
-    function onMouseDown(event: ReactMouseEvent) {
+    function handleMouseDown(event: ReactMouseEvent) {
         setPreviousY(event.clientY);
         setResizing(true);
     }
 
-    function mouseMove(event: MouseEvent) {
+    function handleMouseMove(event: MouseEvent) {
         if (resizing) {
             const finalHeight = height - (previousY - event.clientY);
             if (finalHeight < 50) {
@@ -36,9 +36,9 @@ export default function Terminal() {
         }
     }
 
-    function mouseUp() {
-        window.removeEventListener("mousemove", mouseMove);
-        window.removeEventListener("mouseup", mouseUp);
+    function handleMouseUp() {
+        window.removeEventListener("mousemove", handleMouseMove);
+        window.removeEventListener("mouseup", handleMouseUp);
         setResizing(false);
     }
 
@@ -48,13 +48,13 @@ export default function Terminal() {
                 <Scrollbars style={{ width: "100%" }}>
                     {charts &&
                         charts.map((chart, index) => (
-                            <TerminalLine index={index + 1} chart={chart} key={index} />
+                            <ConsoleLog index={index + 1} chart={chart} key={index} />
                         ))}
                 </Scrollbars>
             </div>
             <div
                 style={{ top: height + 72.5 }}
-                onMouseDown={(event) => onMouseDown(event)}
+                onMouseDown={(event) => handleMouseDown(event)}
                 className={styles.buttonResizer}
             >
                 <div className={styles.buttonResizerShape} />
