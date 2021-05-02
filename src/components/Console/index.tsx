@@ -8,7 +8,7 @@ import ConsoleLog from "../ConsoleLog";
 
 export default function Console() {
     const [height, setHeight] = useState(200);
-    const [previousY, setPreviousY] = useState(300);
+    const [previousY, setPreviousY] = useState(200);
     const [resizing, setResizing] = useState(false);
 
     const { charts } = useChart();
@@ -28,8 +28,8 @@ export default function Console() {
             const finalHeight = height - (previousY - event.clientY);
             if (finalHeight < 50) {
                 setHeight(50);
-            } else if (finalHeight > 300) {
-                setHeight(300);
+            } else if (finalHeight > 200) {
+                setHeight(200);
             } else {
                 setHeight(finalHeight);
             }
