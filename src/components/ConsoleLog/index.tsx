@@ -8,10 +8,10 @@ import { ChartTypeStart, ChartTypeSpan, ChartTypeStop, ChartTypeData } from "../
 
 export default function ConsoleLog({ index, chart }: IConsoleLog) {
     const types = {
-        start: () => <ChartTypeStart {...chart} />,
-        span: () => <ChartTypeSpan {...chart} />,
-        data: () => <ChartTypeData {...chart} />,
-        stop: () => <ChartTypeStop {...chart} />,
+        start: <ChartTypeStart {...chart} key={index} />,
+        span: <ChartTypeSpan {...chart} key={index} />,
+        data: <ChartTypeData {...chart} key={index} />,
+        stop: <ChartTypeStop {...chart} key={index} />,
     };
 
     return (
@@ -19,7 +19,7 @@ export default function ConsoleLog({ index, chart }: IConsoleLog) {
             <div className={styles.lineIndex}>
                 <p>{index}</p>
             </div>
-            <div className={styles.chartData}>{types[chart.type]()}</div>
+            <div className={styles.chartData}>{types[chart.type]}</div>
         </div>
     );
 }

@@ -1,2 +1,2 @@
-export type { IChart, ChartContextData, ChartContextProviderProps } from "./ChartInterface";
-export type { IConsoleLog } from "./ConsoleLogInterface";
+export * from "./ChartInterface";
+export * from "./ConsoleLogInterface";

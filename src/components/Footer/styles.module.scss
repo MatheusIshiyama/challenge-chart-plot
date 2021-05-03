@@ -8,4 +8,29 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-around;
+
+    input {
+        height: 25px;
+        border: 1px solid black;
+        border-radius: 2.5px;
+        outline: none;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 0.9em;
+        text-align: center;
+    }
+
+    select {
+        height: 25px;
+        border: 1px solid black;
+        border-radius: 2.5px;
+        outline: none;
+        font-family: "Source Sans Pro", sans-serif;
+        font-size: 0.9em;
+        text-align: center;
+        text-transform: capitalize;
+    }
+
+    .responseInput {
+        width: 100px;
+    }
 }

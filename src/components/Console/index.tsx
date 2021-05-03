@@ -45,11 +45,10 @@ export default function Console() {
     return (
         <div style={{ height }} className={styles.container}>
             <div className={styles.content}>
-                <Scrollbars style={{ width: "100%" }}>
-                    {charts &&
-                        charts.map((chart, index) => (
-                            <ConsoleLog index={index + 1} chart={chart} key={index} />
-                        ))}
+                <Scrollbars universal={true} style={{ width: "100%" }}>
+                    {charts.map((chart, index) => (
+                        <ConsoleLog index={index + 1} chart={chart} key={index} />
+                    ))}
                 </Scrollbars>
             </div>
             <div
