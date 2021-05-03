@@ -4,6 +4,61 @@ Documentation to **Challenge chart plot** developed by _Matheus Ishiyama_.
 
 This application is developed using `Next.js` and `React`.
 
+## Page & Components
+
+This application is a SPA (Single Page Application), the main page is the _index.tsx_.
+
+### Components
+
+-   Header
+-   Console
+    -   ConsoleLog
+    -   ChartTypes
+        -   ChartTypeStart
+        -   ChartTypeSpan
+        -   ChartTypeData
+        -   ChartTypeStop
+-   Graphic
+-   Footer
+    -   Button
+
+#### Header
+
+This the Header of the page, just to show `User's challenge`
+
+#### Console
+
+That's show all logs have been send to frontend
+
+**ConsoleLog**
+
+Is a single line in the `Console` component.
+
+**ChartTypes**
+
+Is the format of text will be appear in the `ConsoleLog` component.
+
+The ChartTypes is:
+
+-   ChartTypeStart
+-   ChartTypeSpan
+-   ChartTypeData
+-   ChartTypeStop
+
+#### Graphic
+
+Show the plot charts in the graphic.
+
+#### Footer
+
+The footer of the page, it have buttons and inputs to controll all data will be used in the application.
+
+### Context
+
+`Context` allow us to use some data and/or functions between components.
+
+The application has `ChartContext`, to share _chart_ data between `Console`, `Graphic` and `Footer` component.
+
 ## Tests
 
 To test the application, we'll use `Jest` and `Babel`.
@@ -161,6 +216,40 @@ In the `package.json`, I created the script _test_, so you just need to run
 
 ```bash
 yarn test
+```
+
+### Setup and Run
+
+To run the application we need the dependencies, so you can install it, using a `bash` command.
+
+```bash
+yarn
+    or
+yarn install
+```
+
+After that, we need to `build` and `start` the application.
+
+```bash
+yarn build
+    or
+yarn run build
+```
+
+And then
+
+```bash
+yarn start
+    or
+yarn run start
+```
+
+To run as development, use
+
+```bash
+yarn dev
+    or
+yarn run dev
 ```
 
 ---
